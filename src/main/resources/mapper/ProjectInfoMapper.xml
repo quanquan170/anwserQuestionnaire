@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.aim.questionnaire.mapper.ProjectInfoMapper">
+
+
+	<select id="getQuestionnaireEntitiesByProjectId"
+			resultType="com.aim.questionnaire.domain.entity.QuestionnaireInfoEntity">
+		SELECT
+			t3.*,
+			t2.link
+		FROM
+			project_info t1
+		LEFT JOIN project_question t2 ON t1.id = t2.project_id
+		LEFT JOIN questionnaire_info t3 ON t2.questionnaire_id = t3.id
+		where t1.id = #{projectId} and t3.status=1
+	</select>
+
+	<select id="getAllProject" resultType="com.aim.questionnaire.domain.entity.ProjectInfoEntity">
+		select * from project_info
+	</select>
+</mapper>

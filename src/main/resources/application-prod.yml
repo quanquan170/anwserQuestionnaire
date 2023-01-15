@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    dynamic:
+      primary: master
+      strict: true
+      datasource:
+        master:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://127.0.0.1:3306/questionnaire?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Shanghai
+          username: root
+          password: 123456
+          type: com.zaxxer.hikari.HikariDataSource
+          minimum-idle: 8
+          maximum-pool-size: 8
+          connection-timeout: 5000
+
+
+
+
+

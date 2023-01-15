@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "management.endpoint.prometheus.enabled",
+      "type": "java.lang.String",
+      "description": "Description for management.endpoint.prometheus.enabled."
+  }
+] }
